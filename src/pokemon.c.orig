@@ -3168,8 +3168,14 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         if (attackerHoldEffect == sHoldEffectToType[i][0]
             && type == sHoldEffectToType[i][1])
         {
+<<<<<<< HEAD
             attack = (attack * (attackerHoldEffectParam + 100)) / 100;
             spAttack = (spAttack * (attackerHoldEffectParam + 100)) / 100;
+            break;
+=======
+                attack = (attack * (attackerHoldEffectParam + 100)) / 100;
+                spAttack = (spAttack * (attackerHoldEffectParam + 100)) / 100;
+>>>>>>> fee247216cd893216a07dc13ef817c2ce1696f4e
         }
       }
     
@@ -3354,6 +3360,8 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
                     break;
                 }
             }
+<<<<<<< HEAD
+
             // Verificación de Flash Fire fuera del bloque de clima
 if ((gBattleResources->flags->flags[battlerIdAtk] & RESOURCE_FLAG_FLASH_FIRE) && type == TYPE_FIRE)
     damage = (15 * damage) / 10;
@@ -3361,6 +3369,12 @@ if ((gBattleResources->flags->flags[battlerIdAtk] & RESOURCE_FLAG_FLASH_FIRE) &&
 // Verificación de Thick Fat
 if (defender->ability == ABILITY_THICK_FAT && (type == TYPE_FIRE || type == TYPE_ICE))
     gBattleMovePower /= 2;
+=======
+        }
+        // Flash fire triggered
+        if ((gBattleResources->flags->flags[battlerIdAtk] & RESOURCE_FLAG_FLASH_FIRE) && type == TYPE_FIRE)
+            damage = (15 * damage) / 10;
+>>>>>>> fee247216cd893216a07dc13ef817c2ce1696f4e
 
     return damage + 2;
     }
