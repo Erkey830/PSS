@@ -3365,7 +3365,6 @@ if (defender->ability == ABILITY_THICK_FAT && (type == TYPE_FIRE || type == TYPE
     return damage + 2;
     }
 }
-}
 
 u8 CountAliveMonsInBattle(u8 caseId)
 {
